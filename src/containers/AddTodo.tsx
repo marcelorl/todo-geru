@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { FormEvent, ReactNode } from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 
@@ -9,15 +9,17 @@ type Props = {
 const AddTodo = ({ dispatch }: Props) => {
   let input: any
 
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    if (!input.value.trim()) return
+
+    dispatch(addTodo(input.value))
+
+    input.value = ''
+  }
+
   return (
-    <form onSubmit={e => {
-      e.preventDefault()
-      if (!input.value.trim()) {
-        return
-      }
-      dispatch(addTodo(input.value))
-      input.value = ''
-    }}>
+    <form onSubmit={onSubmit}>
       <input ref={(node: ReactNode) => input = node} />
       <button type="submit">
         Add Todo
