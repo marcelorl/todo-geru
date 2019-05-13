@@ -3,11 +3,11 @@ import Todo from '../../atoms/Todo'
 
 type Props = {
   todos: todos[]
-  toggleTodo(id: number): void
+  toggleTodo(id: string): void
 }
 
 type todos = {
-  id: number
+  id: string
   completed: boolean
   text: string
 }

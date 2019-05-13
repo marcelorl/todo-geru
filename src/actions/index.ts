@@ -12,5 +12,5 @@ export const setVisibilityFilter = createAction(
 
 export const toggleTodo = createAction(
   'TOGGLE_TODO',
-  resolve => (id: number) => resolve({ id })
+  resolve => (id: string) => resolve({ id })
 )
