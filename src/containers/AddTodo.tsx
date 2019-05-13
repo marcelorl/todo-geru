@@ -1,31 +1,44 @@
-import React, { FormEvent, ReactNode } from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
+import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
+
 import { addTodo } from '../actions'
 
-type Props = {
-  dispatch: Function
-}
+const mapStateToProps = () => ({})
 
-const AddTodo = ({ dispatch }: Props) => {
-  let input: any
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators(
+    {
+      addTodo
+    },
+    dispatch
+  )
 
-  const onSubmit = (e: FormEvent) => {
+type AppInnerProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
+
+const AddTodo = (props: AppInnerProps) => {
+  const [ todo, setTodo ] = useState('')
+
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setTodo(e.target.value)
+  }
+
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (!input.value.trim()) return
 
-    dispatch(addTodo(input.value))
+    if (!todo.trim()) return
 
-    input.value = ''
+    props.addTodo(todo)
+
+    setTodo('')
   }
 
   return (
     <form onSubmit={onSubmit}>
-      <input ref={(node: ReactNode) => input = node} />
-      <button type="submit">
-        Add Todo
-      </button>
+      <input value={todo} onChange={onChange} />
+      <button type="submit">Add Todo</button>
     </form>
   )
 }
 
-export default connect()(AddTodo)
+export default connect(mapStateToProps, mapDispatchToProps)(AddTodo)
