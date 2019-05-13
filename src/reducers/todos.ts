@@ -1,34 +1,38 @@
+import nanoid from 'nanoid'
+import { createReducer } from 'deox'
+
+import {
+  addTodo,
+  toggleTodo
+} from '../actions'
+
 type stateProps = {
-  id?: number
+  id?: string
+  text?: string
   completed?: boolean
-}[]
-
-type actionProps = {
-  id: number
-  text: string
-  type: string
 }
 
-const todos = (state: stateProps = [], action: actionProps) => {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false
-        }
-      ]
-    case 'TOGGLE_TODO':
-      return state.map(todo =>
-        (todo.id === action.id)
-          ? {...todo, completed: !todo.completed}
-          : todo
-      )
-    default:
-      return state
-  }
-}
+export const INITIAL_STATE: stateProps[] = []
 
-export default todos
+const reducer = createReducer(INITIAL_STATE,
+  handle => [
+  handle(addTodo, (state: any, { payload }: any) =>
+    [
+      ...state,
+      {
+        id: nanoid(),
+        text: payload.text,
+        completed: false
+      }
+    ]
+  ),
+  handle(toggleTodo, (state, { payload }) =>
+    state.map((todo: any) =>
+      (todo.id === payload.id)
+        ? {...todo, completed: !todo.completed}
+        : todo
+    )
+  )
+])
+
+export default reducer

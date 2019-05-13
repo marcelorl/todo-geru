@@ -3,12 +3,12 @@
 ## tools
 
  - react
- - react-redux
+ - deox
  - styled-components
  - normalizr
  - reselect
+ - reakit
  
-
 ## installation
 
 ```

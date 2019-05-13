@@ -1,19 +1,19 @@
-import { VisibilityFilters } from '../actions'
+import { createReducer } from 'deox'
 
-type stateProps = string
+import {
+  setVisibilityFilter
+} from '../actions'
 
-type actionProps = {
-  type: string
-  filter: string
+export const VisibilityFilters = {
+  SHOW_ALL: 'SHOW_ALL',
+  SHOW_COMPLETED: 'SHOW_COMPLETED',
+  SHOW_ACTIVE: 'SHOW_ACTIVE'
 }
 
-const visibilityFilter = (state: stateProps = VisibilityFilters.SHOW_ALL, action: actionProps) => {
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter
-    default:
-      return state
-  }
-}
+export const INITIAL_STATE: string = VisibilityFilters.SHOW_ALL
 
-export default visibilityFilter
+const reducer = createReducer(INITIAL_STATE, handle => [
+  handle(setVisibilityFilter, (state: any, { payload }: any) => payload.filter)
+])
+
+export default reducer
