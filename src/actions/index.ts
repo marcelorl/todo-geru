@@ -25,12 +25,25 @@ export const toggleTodo = createAction(
   (resolve: Function) => (id: number) => resolve({ id })
 )
 
-export const addTodoRequest = (todo: Partial<TodoType>) =>
-  (dispatch: Dispatch) =>
+export const addTodoRequest = (todo: Partial<TodoType>) => {
+  todo.completed = false
+
+  return (dispatch: Dispatch) =>
     axios.post('todos', todo)
       .then(({ data }: AxiosResponse<TodoType>) => dispatch(addTodo(data)))
+}
 
 export const removeTodoRequest = (id: number) =>
   (dispatch: Dispatch) =>
     axios.delete(`todos/${id}`)
       .then(() => dispatch(removeTodo(id)))
+
+export const toggleTodoRequest = (todo: TodoType) => {
+  const data = {
+    completed: !todo.completed
+  }
+
+  return (dispatch: Dispatch) =>
+    axios.patch(`todos/${todo.id}`, data)
+      .then(() => dispatch(toggleTodo(todo.id)))
+}

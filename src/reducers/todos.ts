@@ -14,10 +14,7 @@ const reducer = createReducer(INITIAL_STATE,
   handle(addTodo, (state: any, { payload }: any) =>
     [
       ...state,
-      {
-        ...payload,
-        completed: false
-      }
+      payload
     ]
   ),
   handle(toggleTodo, (state, { payload }) =>
