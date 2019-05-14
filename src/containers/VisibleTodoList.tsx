@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       onClickRemoveTodo: (id: number) => removeTodoRequest(id),
-      toggleTodo: (id: number) => toggleTodo(id)
+      onClickToggleVisibility: (id: number) => toggleTodo(id)
     },
     dispatch
   )

@@ -11,7 +11,7 @@ const mapStateToProps = (state: any, ownProps: any) => ({
 const mapDispatchToProps = (dispatch: Dispatch, ownProps: any) =>
   bindActionCreators(
     {
-      onClick: () => setVisibilityFilter(ownProps.filter)
+      onClickFilterByVisibility: () => setVisibilityFilter(ownProps.filter)
     },
     dispatch
   )

@@ -4,13 +4,13 @@ import { Button } from 'reactstrap'
 type PropsType = {
   active: boolean
   children: ReactNode
-  onClick(e: MouseEvent<HTMLButtonElement>): void
+  onClickFilterByVisibility(e: MouseEvent<HTMLButtonElement>): void
 }
 
-const Link = ({ active, children, onClick }: PropsType) => (
+const Link = ({ active, children, onClickFilterByVisibility }: PropsType) => (
     <Button
       color='info'
-      onClick={onClick}
+      onClick={onClickFilterByVisibility}
       disabled={active}
     >
       {children}

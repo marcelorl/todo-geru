@@ -6,11 +6,11 @@ import { TodoType } from '../../../models'
 
 type PropsType = {
   todos: TodoType[]
-  toggleTodo(id: number): void
   onClickRemoveTodo(id: number): void
+  onClickToggleVisibility(id: number): void
 }
 
-const TodoList = ({ onClickRemoveTodo, todos, toggleTodo }: PropsType) => {
+const TodoList = ({ onClickRemoveTodo, onClickToggleVisibility, todos }: PropsType) => {
   if (!todos.length) return <div className='mt-4 mb-5'>No results</div>
 
   return (
@@ -19,7 +19,7 @@ const TodoList = ({ onClickRemoveTodo, todos, toggleTodo }: PropsType) => {
         <Todo
           key={todo.id}
           todo={todo}
-          onClick={() => toggleTodo(todo.id)}
+          onClickToggleVisibility={() => onClickToggleVisibility(todo.id)}
           onClickRemoveTodo={() => onClickRemoveTodo(todo.id)}
         />
       )}

@@ -6,11 +6,11 @@ import { TodoType } from '../../../models'
 
 type PropsType = {
   todo: TodoType
-  onClick(e: MouseEvent<HTMLElement>): void
+  onClickToggleVisibility(e: MouseEvent<HTMLElement>): void
   onClickRemoveTodo(e: MouseEvent<HTMLElement>): void
 }
 
-const Todo = ({ onClick, onClickRemoveTodo, todo }: PropsType) => {
+const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) => {
   const [ dropdownOpen, setDropdownOpen ] = useState(false)
 
   const onToggleDropdownOpen = () => {
@@ -23,7 +23,7 @@ const Todo = ({ onClick, onClickRemoveTodo, todo }: PropsType) => {
       active={todo.completed}
     >
       <div className='d-flex justify-content-between'>
-        <div className='d-flex align-items-center' onClick={onClick}>{todo.text}</div>
+        <div className='d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text}</div>
         <Dropdown isOpen={dropdownOpen} toggle={onToggleDropdownOpen}>
           <DropdownToggle>
             <FaEllipsisV />

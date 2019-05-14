@@ -10,7 +10,7 @@ const mapStateToProps = () => ({})
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
-      addTodo: addTodoRequest
+      onSubmitAddTodo: addTodoRequest
     },
     dispatch
   )
@@ -29,7 +29,7 @@ const AddTodo = (props: PropsType) => {
 
     if (!todo.trim()) return
 
-    props.addTodo({ text: todo })
+    props.onSubmitAddTodo({ text: todo })
 
     setTodo('')
   }
