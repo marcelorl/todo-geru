@@ -15,17 +15,21 @@ type todos = {
   text: string
 }
 
-const TodoList = ({ onClickRemoveTodo, todos, toggleTodo }: Props) => (
-  <ListGroup className='my-3'>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => toggleTodo(todo.id)}
-        onClickRemoveTodo={() => onClickRemoveTodo(todo.id)}
-      />
-    )}
-  </ListGroup>
-)
+const TodoList = ({ onClickRemoveTodo, todos, toggleTodo }: Props) => {
+  if (!todos.length) return <div className='mt-4 mb-5'>No results</div>
+
+  return (
+    <ListGroup className='my-3'>
+      {todos.map(todo =>
+        <Todo
+          key={todo.id}
+          todo={todo}
+          onClick={() => toggleTodo(todo.id)}
+          onClickRemoveTodo={() => onClickRemoveTodo(todo.id)}
+        />
+      )}
+    </ListGroup>
+  )
+}
 
 export default TodoList

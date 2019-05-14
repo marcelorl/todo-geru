@@ -1,24 +1,44 @@
-import React, { MouseEvent } from 'react'
-import { ListGroupItem } from 'reactstrap'
+import React, { MouseEvent, useState } from 'react'
+import { FaEllipsisV } from 'react-icons/fa'
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, ListGroupItem } from 'reactstrap'
 
 type Props = {
-  text: string
-  completed: boolean
+  todo: {
+    text: string
+    completed: boolean
+  }
   onClick(e: MouseEvent<HTMLElement>): void
   onClickRemoveTodo(e: MouseEvent<HTMLElement>): void
 }
 
-const Todo = ({ onClick, onClickRemoveTodo, completed, text }: Props) => (
-  <ListGroupItem
-    action
-    onClick={onClick}
-    style={{
-      textDecoration: completed ? 'line-through' : 'none'
-    }}
-  >
-    {text}
-    <button onClick={onClickRemoveTodo}>Delete</button>
-  </ListGroupItem>
-)
+const Todo = ({ onClick, onClickRemoveTodo, todo }: Props) => {
+  const [ dropdownOpen, setDropdownOpen ] = useState(false)
+
+  const onToggleDropdownOpen = () => {
+    setDropdownOpen(!dropdownOpen)
+  }
+
+  return (
+    <ListGroupItem
+      action
+      active={todo.completed}
+    >
+      <div className='d-flex justify-content-between'>
+        <div className='d-flex align-items-center' onClick={onClick}>{todo.text}</div>
+        <Dropdown isOpen={dropdownOpen} toggle={onToggleDropdownOpen}>
+          <DropdownToggle>
+            <FaEllipsisV />
+          </DropdownToggle>
+          <DropdownMenu right>
+            <DropdownItem header>Options</DropdownItem>
+            <DropdownItem>Edit</DropdownItem>
+            <DropdownItem divider/>
+            <DropdownItem onClick={onClickRemoveTodo}>Delete</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      </div>
+    </ListGroupItem>
+  )
+}
 
 export default Todo
