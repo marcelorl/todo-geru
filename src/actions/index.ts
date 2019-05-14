@@ -2,15 +2,15 @@ import { createAction } from 'deox'
 
 export const addTodo = createAction(
   'ADD_TODO',
-  resolve => (text: string) => resolve({ text })
+  (resolve: Function) => (text: string) => resolve({ text })
 )
 
 export const setVisibilityFilter = createAction(
   'SET_VISIBILITY_FILTER',
-  resolve => (filter: string) => resolve({ filter })
+  (resolve: Function) => (filter: string) => resolve({ filter })
 )
 
 export const toggleTodo = createAction(
   'TOGGLE_TODO',
-  resolve => (id: string) => resolve({ id })
+  (resolve: Function) => (id: string) => resolve({ id })
 )
