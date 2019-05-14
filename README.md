@@ -12,7 +12,7 @@
 - reactstrap
   - Component's style
 - atomic design
-  - Pattern to split components that aren't connected to the store. Please have a look in components folder to have a
+  - Pattern to split presentacional components that aren't connected to the store. Please have a look in components folder to have a
   better understanding of its usage. 
  
 ## installation
