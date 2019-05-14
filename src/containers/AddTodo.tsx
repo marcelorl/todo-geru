@@ -1,6 +1,7 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
+import { Button, Col, Form, FormGroup, Input, Row } from 'reactstrap'
 
 import { addTodo } from '../actions'
 
@@ -34,10 +35,22 @@ const AddTodo = (props: AppInnerProps) => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
-      <input value={todo} onChange={onChange} />
-      <button type="submit">Add Todo</button>
-    </form>
+    <Form onSubmit={onSubmit}>
+      <Row>
+        <Col sm='12' lg='3'>
+          <FormGroup>
+            <Input name='todo' id='todo' placeholder='add a todo' value={todo} onChange={onChange} />
+          </FormGroup>
+        </Col>
+        <Col sm='12' lg='3'>
+          <Button
+            color='primary'
+            type='submit'>
+            Add Todo
+          </Button>
+        </Col>
+      </Row>
+    </Form>
   )
 }
 
