@@ -1,18 +1,18 @@
-import nanoid from 'nanoid'
 import { createReducer } from 'deox'
 
 import {
   addTodo,
+  removeTodo,
   toggleTodo
 } from '../actions'
 
-type stateProps = {
+type Todo = {
   id?: string
   text?: string
   completed?: boolean
 }
 
-export const INITIAL_STATE: stateProps[] = []
+export const INITIAL_STATE: Todo[] = []
 
 const reducer = createReducer(INITIAL_STATE,
   handle => [
@@ -20,8 +20,7 @@ const reducer = createReducer(INITIAL_STATE,
     [
       ...state,
       {
-        id: nanoid(),
-        text: payload.text,
+        ...payload,
         completed: false
       }
     ]
@@ -32,6 +31,9 @@ const reducer = createReducer(INITIAL_STATE,
         ? {...todo, completed: !todo.completed}
         : todo
     )
+  ),
+  handle(removeTodo, (state, { payload }) =>
+    state.filter((todo: any) => todo.id !== payload.id)
   )
 ])
 

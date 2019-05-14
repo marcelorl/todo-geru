@@ -7,7 +7,6 @@
   - State manager
 - deox
   - Used to decrease redux boilerplate
-- normalizr
 - reselect
 - reactstrap
   - Component's style

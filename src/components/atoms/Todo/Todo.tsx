@@ -5,9 +5,10 @@ type Props = {
   text: string
   completed: boolean
   onClick(e: MouseEvent<HTMLElement>): void
+  onClickRemoveTodo(e: MouseEvent<HTMLElement>): void
 }
 
-const Todo = ({ onClick, completed, text }: Props) => (
+const Todo = ({ onClick, onClickRemoveTodo, completed, text }: Props) => (
   <ListGroupItem
     action
     onClick={onClick}
@@ -16,6 +17,7 @@ const Todo = ({ onClick, completed, text }: Props) => (
     }}
   >
     {text}
+    <button onClick={onClickRemoveTodo}>Delete</button>
   </ListGroupItem>
 )
 

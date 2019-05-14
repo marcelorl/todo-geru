@@ -3,14 +3,14 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { Button, Col, Form, FormGroup, Input, Row } from 'reactstrap'
 
-import { addTodo } from '../actions'
+import { addTodoRequest } from '../actions'
 
 const mapStateToProps = () => ({})
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
-      addTodo
+      addTodo: addTodoRequest
     },
     dispatch
   )
@@ -29,7 +29,7 @@ const AddTodo = (props: AppInnerProps) => {
 
     if (!todo.trim()) return
 
-    props.addTodo(todo)
+    props.addTodo({ text: todo })
 
     setTodo('')
   }

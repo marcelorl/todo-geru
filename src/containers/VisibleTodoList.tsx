@@ -1,9 +1,9 @@
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 
-import { toggleTodo } from '../actions'
 import TodoList from '../components/molecules/TodoList'
 import { getVisibleTodos } from '../selectors'
+import { removeTodoRequest, toggleTodo } from '../actions'
 
 const mapStateToProps = (state: any) => ({
   todos: getVisibleTodos(state)
@@ -12,7 +12,8 @@ const mapStateToProps = (state: any) => ({
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
-      toggleTodo: (id: string) => toggleTodo(id)
+      onClickRemoveTodo: (id: number) => removeTodoRequest(id),
+      toggleTodo: (id: number) => toggleTodo(id)
     },
     dispatch
   )
