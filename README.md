@@ -4,10 +4,9 @@
 
  - react
  - deox
- - styled-components
  - normalizr
  - reselect
- - reakit
+ - reactstrap
  
 ## installation
 

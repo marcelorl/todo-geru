@@ -35,19 +35,26 @@ const AddTodo = (props: AppInnerProps) => {
   }
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onSubmit} autoComplete='off'>
       <Row>
-        <Col sm='12' lg='3'>
+        <Col xs='12' sm='9' lg='10'>
           <FormGroup>
-            <Input name='todo' id='todo' placeholder='add a todo' value={todo} onChange={onChange} />
+            <Input
+              name='todo'
+              id='todo'
+              placeholder='Ex. Take a shower, Help my mother, Finish GERU test'
+              value={todo}
+              onChange={onChange} />
           </FormGroup>
         </Col>
-        <Col sm='12' lg='3'>
-          <Button
-            color='primary'
-            type='submit'>
-            Add Todo
-          </Button>
+        <Col xs='12' sm='3' lg='2'>
+          <div className='d-flex justify-content-end'>
+            <Button
+              color='primary'
+              type='submit'>
+              Add Todo
+            </Button>
+          </div>
         </Col>
       </Row>
     </Form>

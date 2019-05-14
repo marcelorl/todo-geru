@@ -1,4 +1,6 @@
 import React from 'react'
+import { ListGroup} from 'reactstrap'
+
 import Todo from '../../atoms/Todo'
 
 type Props = {
@@ -13,7 +15,7 @@ type todos = {
 }
 
 const TodoList = ({ todos, toggleTodo }: Props) => (
-  <ul>
+  <ListGroup className='my-3'>
     {todos.map(todo =>
       <Todo
         key={todo.id}
@@ -21,7 +23,7 @@ const TodoList = ({ todos, toggleTodo }: Props) => (
         onClick={() => toggleTodo(todo.id)}
       />
     )}
-  </ul>
+  </ListGroup>
 )
 
 export default TodoList

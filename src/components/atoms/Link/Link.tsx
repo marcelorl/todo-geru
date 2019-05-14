@@ -1,4 +1,5 @@
 import React, { MouseEvent, ReactNode } from 'react'
+import { Button } from 'reactstrap'
 
 type Props = {
   active: boolean
@@ -7,15 +8,13 @@ type Props = {
 }
 
 const Link = ({ active, children, onClick }: Props) => (
-    <button
-       onClick={onClick}
-       disabled={active}
-       style={{
-           marginLeft: '4px',
-       }}
+    <Button
+      color='info'
+      onClick={onClick}
+      disabled={active}
     >
       {children}
-    </button>
+    </Button>
 )
 
 export default Link

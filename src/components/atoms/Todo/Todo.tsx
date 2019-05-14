@@ -1,4 +1,5 @@
 import React, { MouseEvent } from 'react'
+import { ListGroupItem } from 'reactstrap'
 
 type Props = {
   text: string
@@ -7,14 +8,15 @@ type Props = {
 }
 
 const Todo = ({ onClick, completed, text }: Props) => (
-  <li
+  <ListGroupItem
+    action
     onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
     {text}
-  </li>
+  </ListGroupItem>
 )
 
 export default Todo
