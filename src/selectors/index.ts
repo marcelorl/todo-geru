@@ -1,8 +1,6 @@
 import { createSelector } from 'reselect'
 
-type Todo = {
-  completed: boolean
-}
+import { TodoType } from '../models'
 
 const getVisibilityFilter = (state: any) => state.visibilityFilter
 const getTodos = (state: any) => state.todos
@@ -14,9 +12,9 @@ export const getVisibleTodos = createSelector(
       case 'SHOW_ALL':
         return todos
       case 'SHOW_COMPLETED':
-        return todos.filter((t: Todo) => t.completed)
+        return todos.filter((todo: TodoType) => todo.completed)
       case 'SHOW_ACTIVE':
-        return todos.filter((t: Todo) => !t.completed)
+        return todos.filter((todo: TodoType) => !todo.completed)
     }
   }
 )

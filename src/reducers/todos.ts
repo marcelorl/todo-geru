@@ -5,14 +5,9 @@ import {
   removeTodo,
   toggleTodo
 } from '../actions'
+import { TodoType } from '../models'
 
-type Todo = {
-  id?: string
-  text?: string
-  completed?: boolean
-}
-
-export const INITIAL_STATE: Todo[] = []
+export const INITIAL_STATE: Partial<TodoType>[] = []
 
 const reducer = createReducer(INITIAL_STATE,
   handle => [

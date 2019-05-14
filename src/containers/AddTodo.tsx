@@ -15,9 +15,9 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   )
 
-type AppInnerProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
+type PropsType = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
-const AddTodo = (props: AppInnerProps) => {
+const AddTodo = (props: PropsType) => {
   const [ todo, setTodo ] = useState('')
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {

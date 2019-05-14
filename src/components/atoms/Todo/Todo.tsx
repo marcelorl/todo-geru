@@ -2,16 +2,15 @@ import React, { MouseEvent, useState } from 'react'
 import { FaEllipsisV } from 'react-icons/fa'
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, ListGroupItem } from 'reactstrap'
 
-type Props = {
-  todo: {
-    text: string
-    completed: boolean
-  }
+import { TodoType } from '../../../models'
+
+type PropsType = {
+  todo: TodoType
   onClick(e: MouseEvent<HTMLElement>): void
   onClickRemoveTodo(e: MouseEvent<HTMLElement>): void
 }
 
-const Todo = ({ onClick, onClickRemoveTodo, todo }: Props) => {
+const Todo = ({ onClick, onClickRemoveTodo, todo }: PropsType) => {
   const [ dropdownOpen, setDropdownOpen ] = useState(false)
 
   const onToggleDropdownOpen = () => {

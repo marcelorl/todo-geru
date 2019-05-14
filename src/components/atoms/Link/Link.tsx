@@ -1,13 +1,13 @@
 import React, { MouseEvent, ReactNode } from 'react'
 import { Button } from 'reactstrap'
 
-type Props = {
+type PropsType = {
   active: boolean
   children: ReactNode
   onClick(e: MouseEvent<HTMLButtonElement>): void
 }
 
-const Link = ({ active, children, onClick }: Props) => (
+const Link = ({ active, children, onClick }: PropsType) => (
     <Button
       color='info'
       onClick={onClick}
