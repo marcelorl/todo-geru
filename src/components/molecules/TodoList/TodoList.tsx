@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ListGroup} from 'reactstrap'
 
 import Todo from '../../atoms/Todo'
@@ -8,9 +8,14 @@ type PropsType = {
   todos: TodoType[]
   onClickRemoveTodo(id: number): void
   onClickToggleVisibility(todo: TodoType): void
+  onLoadFetchTodos(): void
 }
 
-const TodoList = ({ onClickRemoveTodo, onClickToggleVisibility, todos }: PropsType) => {
+const TodoList = ({ onClickRemoveTodo, onClickToggleVisibility, onLoadFetchTodos, todos }: PropsType) => {
+  useEffect(() => {
+    if (!todos.length) onLoadFetchTodos()
+  })
+
   if (!todos.length) return <div className='mt-4 mb-5'>No results</div>
 
   return (

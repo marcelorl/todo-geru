@@ -1,7 +1,8 @@
 import React, { MouseEvent, useState } from 'react'
 import { FaEllipsisV } from 'react-icons/fa'
-import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle, ListGroupItem } from 'reactstrap'
+import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, ListGroupItem } from 'reactstrap'
 
+import './Todo.css'
 import { TodoType } from '../../../models'
 
 type PropsType = {
@@ -23,7 +24,7 @@ const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) =
       active={todo.completed}
     >
       <div className='d-flex justify-content-between'>
-        <div className='d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text}</div>
+        <Button color='link' className='btn-todo d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text}</Button>
         <Dropdown isOpen={dropdownOpen} toggle={onToggleDropdownOpen}>
           <DropdownToggle>
             <FaEllipsisV />

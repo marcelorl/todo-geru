@@ -1,0 +1,11 @@
+.list-group-item.active {
+  z-index: unset;
+}
+
+.btn-todo {
+  flex-grow: 1;
+}
+
+.list-group-item.active .btn-todo {
+  color: #ffffff;
+}

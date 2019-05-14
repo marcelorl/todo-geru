@@ -3,7 +3,7 @@ import { bindActionCreators, Dispatch } from 'redux'
 
 import TodoList from '../components/molecules/TodoList'
 import { getVisibleTodos } from '../selectors'
-import { removeTodoRequest, toggleTodoRequest } from '../actions'
+import { fetchTodosRequest, removeTodoRequest, toggleTodoRequest } from '../actions'
 import { TodoType } from '../models'
 
 const mapStateToProps = (state: any) => ({
@@ -14,7 +14,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       onClickRemoveTodo: (id: number) => removeTodoRequest(id),
-      onClickToggleVisibility: (todo: TodoType) => toggleTodoRequest(todo)
+      onClickToggleVisibility: (todo: TodoType) => toggleTodoRequest(todo),
+      onLoadFetchTodos: () => fetchTodosRequest()
     },
     dispatch
   )

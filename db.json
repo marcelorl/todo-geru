@@ -2,47 +2,13 @@
   "todos": [
     {
       "id": 1,
-      "text": "json-server"
-    },
-    {
-      "text": "rqwrwrq",
-      "completed": false,
-      "id": 2
+      "text": "json-server",
+      "completed": false
     },
     {
       "text": "rqwrwrqw",
       "completed": false,
       "id": 3
-    },
-    {
-      "text": "rqwrqwrq",
-      "completed": false,
-      "id": 4
-    },
-    {
-      "text": "rqwerqwerq",
-      "completed": false,
-      "id": 5
-    },
-    {
-      "text": "gdfgdfgdgd",
-      "completed": false,
-      "id": 6
-    },
-    {
-      "text": "rqwerqwrq",
-      "completed": false,
-      "id": 7
-    },
-    {
-      "text": "rwrwqrq",
-      "completed": true,
-      "id": 8
-    },
-    {
-      "text": "test",
-      "completed": false,
-      "id": 9
     }
   ]
 }

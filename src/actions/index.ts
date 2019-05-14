@@ -15,6 +15,11 @@ export const removeTodo = createAction(
   (resolve: Function) => (id: number) => resolve({ id })
 )
 
+export const fetchTodos = createAction(
+  'FETCH_TODO',
+  (resolve: Function) => (todos: TodoType[]) => resolve(todos)
+)
+
 export const setVisibilityFilter = createAction(
   'SET_VISIBILITY_FILTER',
   (resolve: Function) => (filter: string) => resolve({ filter })
@@ -32,6 +37,11 @@ export const addTodoRequest = (todo: Partial<TodoType>) => {
     axios.post('todos', todo)
       .then(({ data }: AxiosResponse<TodoType>) => dispatch(addTodo(data)))
 }
+
+export const fetchTodosRequest = () =>
+  (dispatch: Dispatch) =>
+    axios.get('todos')
+      .then(({ data }: AxiosResponse<TodoType[]>) => dispatch(fetchTodos(data)))
 
 export const removeTodoRequest = (id: number) =>
   (dispatch: Dispatch) =>

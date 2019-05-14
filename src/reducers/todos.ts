@@ -2,6 +2,7 @@ import { createReducer } from 'deox'
 
 import {
   addTodo,
+  fetchTodos,
   removeTodo,
   toggleTodo
 } from '../actions'
@@ -16,6 +17,8 @@ const reducer = createReducer(INITIAL_STATE,
       ...state,
       payload
     ]
+  ),
+  handle(fetchTodos, (_, { payload }) => payload
   ),
   handle(toggleTodo, (state, { payload }) =>
     state.map((todo: any) =>
