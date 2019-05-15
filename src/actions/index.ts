@@ -40,6 +40,11 @@ export const setPaginationFilter = createAction(
   (resolve: Function) => (filter: number) => resolve({ filter })
 )
 
+export const setDaysFilter = createAction(
+  'SET_DAYS_FILTER',
+  (resolve: Function) => (filter: string) => resolve({ filter })
+)
+
 export const toggleTodo = createAction(
   'TOGGLE_TODO',
   (resolve: Function) => (id: number) => resolve({ id })

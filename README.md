@@ -40,3 +40,7 @@ When you start the application, it will start the frontend + json-server api
 ```
 $ npm start
 ```
+
+## Work board
+
+[https://github.com/marcelorl/todo-geru/projects/2](https://github.com/marcelorl/todo-geru/projects/2)

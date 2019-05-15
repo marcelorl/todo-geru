@@ -8,8 +8,6 @@ type PropsType = {
 }
 
 const PaginationWrapper = ({ onClickPagination, page, todosLength }: PropsType) => {
-  if (todosLength > 10) return null
-
   const onClickPaginationPrevious = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
 
@@ -31,7 +29,7 @@ const PaginationWrapper = ({ onClickPagination, page, todosLength }: PropsType) 
           href='#'
           onClick={onClickPaginationPrevious} />
       </PaginationItem>
-      <PaginationItem disabled={page >= Math.floor(todosLength / 10)}>
+      <PaginationItem disabled={page >= (Math.ceil(todosLength / 10))}>
         <PaginationLink
           className='px-3'
           next

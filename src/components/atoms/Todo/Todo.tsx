@@ -24,13 +24,16 @@ const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) =
     setIsModalOpen(!isModalOpen)
   }
 
+  const dueDate = new Date(todo.dueDate)
+  const dueDateFormatted = `${dueDate.getDate()}/${dueDate.getMonth() + 1}/${dueDate.getFullYear()}`
+
   return (
     <ListGroupItem
       action
       active={todo.completed}
     >
       <div className='d-flex justify-content-between'>
-        <Button color='link' className='btn-todo d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text}</Button>
+        <Button color='link' className='btn-todo d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text} | {dueDateFormatted}</Button>
         <Dropdown isOpen={dropdownOpen} toggle={onToggleDropdownOpen}>
           <DropdownToggle>
             <FaEllipsisV />

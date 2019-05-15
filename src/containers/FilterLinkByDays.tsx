@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 
-import { setVisibilityFilter } from '../actions'
+import { setDaysFilter } from '../actions'
 import Link from '../components/atoms/Link'
 
 type PropsType = {
@@ -9,13 +9,13 @@ type PropsType = {
 }
 
 const mapStateToProps = (state: any, ownProps: PropsType) => ({
-  active: ownProps.filter === state.filters.visibilityFilter
+  active: ownProps.filter === state.filters.daysFilter
 })
 
 const mapDispatchToProps = (dispatch: Dispatch, ownProps: PropsType) =>
   bindActionCreators(
     {
-      onClickFilter: () => setVisibilityFilter(ownProps.filter)
+      onClickFilter: () => setDaysFilter(ownProps.filter)
     },
     dispatch
   )
