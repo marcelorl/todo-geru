@@ -25,7 +25,7 @@ const SearchTodo = ({ onClickFilterByKeyword }: PropsType) => {
           <FormGroup>
             <Input
               name='keyword'
-              placeholder='Ex. Take a shower, Help my mother, Finish GERU test'
+              placeholder='Ex. Tomar banho, Ajudar minha mãe, Terminar o Teste da GERU'
               onChange={onChange}
               value={keywordSearch} />
           </FormGroup>
@@ -36,7 +36,7 @@ const SearchTodo = ({ onClickFilterByKeyword }: PropsType) => {
               className='w-100'
               color='primary'
               type='submit'>
-              Search
+              Procurar
             </Button>
           </div>
         </Col>

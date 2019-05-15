@@ -10,13 +10,13 @@ const Footer = () => (
       <div className='mb-3 d-flex justify-content-between'>
         <ButtonGroup>
           <FilterLink filter={VisibilityFilters.SHOW_ALL}>
-            All
+            Todas
           </FilterLink>
           <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
-            Active
+            Ativas
           </FilterLink>
           <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
-            Completed
+            Completas
           </FilterLink>
         </ButtonGroup>
       </div>

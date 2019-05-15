@@ -18,7 +18,7 @@ const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo }: PropsType) =>
 
   return (
     <Modal autoFocus centered isOpen={isOpen} toggle={onClickToggleModal}>
-      <ModalHeader toggle={onClickToggleModal}>Save Todo</ModalHeader>
+      <ModalHeader toggle={onClickToggleModal}>Adicionar Tarefa</ModalHeader>
       <Formik
         initialValues={{
           text: '',

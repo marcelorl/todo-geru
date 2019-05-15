@@ -17,7 +17,7 @@ const Header = () => {
         <NavbarBrand href="/">
           <h1>Todo GERU</h1>
         </NavbarBrand>
-        <Button color='success' onClick={onClickToggleModal}>Add Todo</Button>
+        <Button color='success' onClick={onClickToggleModal}>Adicionar Tarefa</Button>
       </Navbar>
       <AddTodo isOpen={isModalOpen} onClickToggleModal={onClickToggleModal} />
     </Fragment>
