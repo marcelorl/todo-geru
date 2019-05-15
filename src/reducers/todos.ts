@@ -2,6 +2,7 @@ import { createReducer } from 'deox'
 
 import {
   addTodo,
+  editTodo,
   fetchTodos,
   removeTodo,
   toggleTodo
@@ -18,8 +19,14 @@ const reducer = createReducer(INITIAL_STATE,
       payload
     ]
   ),
-  handle(fetchTodos, (_, { payload }) => payload
+  handle(editTodo, (state: any, { payload }: any) =>
+    state.map((todo: any) =>
+      (todo.id === payload.id)
+        ? payload
+        : todo
+    )
   ),
+  handle(fetchTodos, (_, { payload }) => payload),
   handle(toggleTodo, (state, { payload }) =>
     state.map((todo: any) =>
       (todo.id === payload.id)

@@ -4,6 +4,7 @@ import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, ListGroup
 
 import './Todo.css'
 import { TodoType } from '../../../models'
+import EditTodo from "../../../containers/EditTodo";
 
 type PropsType = {
   todo: TodoType
@@ -13,9 +14,14 @@ type PropsType = {
 
 const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) => {
   const [ dropdownOpen, setDropdownOpen ] = useState(false)
+  const [ isModalOpen, setIsModalOpen ] = useState(false)
 
   const onToggleDropdownOpen = () => {
     setDropdownOpen(!dropdownOpen)
+  }
+
+  const onClickToggleModal = () => {
+    setIsModalOpen(!isModalOpen)
   }
 
   return (
@@ -31,12 +37,13 @@ const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) =
           </DropdownToggle>
           <DropdownMenu right>
             <DropdownItem header>Options</DropdownItem>
-            <DropdownItem>Edit</DropdownItem>
+            <DropdownItem onClick={onClickToggleModal}>Edit</DropdownItem>
             <DropdownItem divider/>
             <DropdownItem onClick={onClickRemoveTodo}>Delete</DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </div>
+      <EditTodo todo={todo} isOpen={isModalOpen} onClickToggleModal={onClickToggleModal} />
     </ListGroupItem>
   )
 }

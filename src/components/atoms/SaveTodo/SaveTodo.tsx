@@ -1,16 +1,43 @@
 import React from 'react'
-import { Button, Form, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap'
 import { Formik } from 'formik'
 import DatePicker from 'react-datepicker'
+import {
+  Button,
+  Form,
+  FormGroup,
+  Input,
+  Label,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader
+} from 'reactstrap'
+
 import 'react-datepicker/dist/react-datepicker.min.css'
+
+import { TodoType } from '../../../models'
 
 type PropsType = {
   isOpen: boolean
   onClickToggleModal(): void
   onSubmitAddTodo(todo: any): void
+  todo?: TodoType
 }
 
-const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo }: PropsType) => {
+const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo, todo }: PropsType) => {
+  let formInitialState = {
+    text: '',
+    dueDate: new Date(),
+    length: 0,
+    reminder: 0
+  }
+
+  if (todo) {
+    formInitialState = { ...todo }
+
+    formInitialState.dueDate = new Date(formInitialState.dueDate)
+  }
+
   const onSubmit = (values: any) => {
     onSubmitAddTodo(values)
     onClickToggleModal()
@@ -20,12 +47,7 @@ const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo }: PropsType) =>
     <Modal autoFocus centered isOpen={isOpen} toggle={onClickToggleModal}>
       <ModalHeader toggle={onClickToggleModal}>Adicionar Tarefa</ModalHeader>
       <Formik
-        initialValues={{
-          text: '',
-          dueDate: new Date(),
-          length: 0,
-          reminder: 0
-        }}
+        initialValues={formInitialState}
         onSubmit={onSubmit}
       >
         {props => {
@@ -41,7 +63,7 @@ const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo }: PropsType) =>
               <ModalBody>
                 <FormGroup>
                   <Label for='text'>Descrição</Label>
-                  <Input id='text' name='text' onChange={handleChange} />
+                  <Input id='text' name='text' onChange={handleChange} value={values.text} />
                 </FormGroup>
                 <FormGroup className='d-flex flex-column'>
                   <Label for='dueDate'>Data e hora que a tarefa acontecerá</Label>
@@ -61,6 +83,7 @@ const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo }: PropsType) =>
                     id='length'
                     name='length'
                     type='number'
+                    value={values.length}
                     onChange={handleChange}
                   />
                 </FormGroup>
@@ -70,6 +93,7 @@ const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo }: PropsType) =>
                     id='reminder'
                     name='reminder'
                     type='number'
+                    value={values.reminder}
                     onChange={handleChange}
                   />
                 </FormGroup>

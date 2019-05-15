@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Button, Navbar, NavbarBrand } from 'reactstrap'
 
-// import SaveTodo from '../../atoms/SaveTodo'
 import AddTodo from '../../../containers/AddTodo'
 
 const Header = () => {

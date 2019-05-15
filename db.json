@@ -3,57 +3,101 @@
     {
       "id": 1,
       "text": "json-server1",
-      "completed": false
+      "dueDate": "2019-05-02T13:00:00.000Z",
+      "completed": false,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 2,
       "text": "json-server2",
-      "completed": false
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": false,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 3,
       "text": "json-server3",
-      "completed": false
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": false,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 4,
       "text": "json-server4",
-      "completed": false
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": false,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 5,
       "text": "json-server5",
-      "completed": true
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": true,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 6,
       "text": "json-server6",
-      "completed": true
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": true,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 7,
       "text": "json-server7",
-      "completed": false
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": false,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 8,
       "text": "json-server8",
-      "completed": true
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": true,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 9,
       "text": "json-server9",
-      "completed": false
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": false,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 10,
       "text": "json-server10",
-      "completed": false
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": false,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "id": 11,
       "text": "json-server11",
-      "completed": true
+      "dueDate": "2019-05-15T13:36:33.749Z",
+      "completed": true,
+      "length": 1234,
+      "reminder": 123,
+      "createdAt": "2019-05-15T13:36:48.381Z"
     },
     {
       "text": "42342",
@@ -64,7 +108,7 @@
       "id": 12
     },
     {
-      "text": "42342",
+      "text": "testing2",
       "dueDate": "2019-05-15T07:34:38.238Z",
       "length": 4242,
       "reminder": 42342,
@@ -72,9 +116,9 @@
       "id": 13
     },
     {
-      "text": "outra task",
+      "text": "outra task2",
       "dueDate": "2019-05-15T13:36:33.749Z",
-      "length": 123,
+      "length": 1234,
       "reminder": 123,
       "completed": true,
       "createdAt": "2019-05-15T13:36:48.381Z",

@@ -10,6 +10,11 @@ export const addTodo = createAction(
   (resolve: Function) => (todo: Partial<TodoType>) => resolve(todo)
 )
 
+export const editTodo = createAction(
+  'EDIT_TODO',
+  (resolve: Function) => (todo: Partial<TodoType>) => resolve(todo)
+)
+
 export const removeTodo = createAction(
   'REMOVE_TODO',
   (resolve: Function) => (id: number) => resolve({ id })
@@ -48,6 +53,11 @@ export const addTodoRequest = (todo: Partial<TodoType>) => {
     axios.post('todos', todo)
       .then(({ data }: AxiosResponse<TodoType>) => dispatch(addTodo(data)))
 }
+
+export const editTodoRequest = (todo: TodoType) =>
+  (dispatch: Dispatch) =>
+    axios.put(`todos/${todo.id}`, todo)
+      .then(({ data }: AxiosResponse<TodoType>) => dispatch(editTodo(data)))
 
 export const fetchTodosRequest = () =>
   (dispatch: Dispatch) =>
