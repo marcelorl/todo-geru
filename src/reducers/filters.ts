@@ -27,7 +27,8 @@ export const INITIAL_STATE: FiltersType = {
 const reducer = createReducer(INITIAL_STATE, handle => [
   handle(setKeywordSearchFilter, (state: any, { payload }: any) => ({
     ...state,
-    keywordSearchFilter: payload.filter
+    keywordSearchFilter: payload.filter,
+    pageFilter: 0
   })),
   handle(setPaginationFilter, (state: any, { payload }: any) => ({
     ...state,
@@ -35,6 +36,7 @@ const reducer = createReducer(INITIAL_STATE, handle => [
   })),
   handle(setVisibilityFilter, (state: any, { payload }: any) => ({
     ...state,
+    pageFilter: 0,
     visibilityFilter: payload.filter
   }))
 ])
