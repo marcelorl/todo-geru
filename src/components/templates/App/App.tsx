@@ -2,7 +2,7 @@ import React from 'react'
 import { Container } from 'reactstrap'
 
 import Footer from '../../molecules/Footer'
-import SearchTodo from '../../atoms/SearchTodo'
+import SearchTodo from '../../../containers/SearchTodo'
 // import AddTodo from '../../../containers/AddTodo'
 import VisibleTodoList from '../../../containers/VisibleTodoList'
 

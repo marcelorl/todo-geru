@@ -2,7 +2,7 @@ import React from 'react'
 import { Col, Row } from 'reactstrap'
 
 import FilterLink from '../../../containers/FilterLink'
-import { VisibilityFilters } from '../../../reducers/visibilityFilter'
+import { VisibilityFilters } from '../../../reducers/filters'
 
 const Footer = () => (
   <Row>

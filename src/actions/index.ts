@@ -25,6 +25,11 @@ export const setVisibilityFilter = createAction(
   (resolve: Function) => (filter: string) => resolve({ filter })
 )
 
+export const setKeywordSearchFilter = createAction(
+  'SET_KEYWORD_SEARCH_FILTER',
+  (resolve: Function) => (filter: string) => resolve({ filter })
+)
+
 export const toggleTodo = createAction(
   'TOGGLE_TODO',
   (resolve: Function) => (id: number) => resolve({ id })

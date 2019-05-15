@@ -4,13 +4,13 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { createLogger } from 'redux-logger'
 
 import todos from './todos'
-import visibilityFilter from './visibilityFilter'
+import filters from './filters'
 
 const loggerMiddleware = createLogger()
 
 const reducers = combineReducers({
   todos,
-  visibilityFilter
+  filters
 })
 
 const middlewares = applyMiddleware(

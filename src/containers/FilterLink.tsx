@@ -4,11 +4,15 @@ import { bindActionCreators, Dispatch } from 'redux'
 import { setVisibilityFilter } from '../actions'
 import Link from '../components/atoms/Link'
 
-const mapStateToProps = (state: any, ownProps: any) => ({
+type PropsType = {
+  filter: string
+}
+
+const mapStateToProps = (state: any, ownProps: PropsType) => ({
   active: ownProps.filter === state.visibilityFilter
 })
 
-const mapDispatchToProps = (dispatch: Dispatch, ownProps: any) =>
+const mapDispatchToProps = (dispatch: Dispatch, ownProps: PropsType) =>
   bindActionCreators(
     {
       onClickFilterByVisibility: () => setVisibilityFilter(ownProps.filter)
