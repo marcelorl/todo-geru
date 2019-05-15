@@ -42,6 +42,7 @@ export const toggleTodo = createAction(
 
 export const addTodoRequest = (todo: Partial<TodoType>) => {
   todo.completed = false
+  todo.createdAt = new Date()
 
   return (dispatch: Dispatch) =>
     axios.post('todos', todo)

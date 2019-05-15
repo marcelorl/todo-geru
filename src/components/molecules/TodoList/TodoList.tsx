@@ -1,7 +1,8 @@
-import React, { Fragment, MouseEvent, useEffect } from 'react'
-import { ListGroup, Pagination, PaginationItem, PaginationLink } from 'reactstrap'
+import React, { Fragment, useEffect } from 'react'
+import { ListGroup } from 'reactstrap'
 
 import Todo from '../../atoms/Todo'
+import Pagination from '../../atoms/Pagination'
 import { TodoType } from '../../../models'
 
 type PropsType = {
@@ -22,40 +23,6 @@ const TodoList = (
     page,
     todos
   }: PropsType) => {
-  const renderPagination = () => {
-    if (todos.length > 10) return null
-
-    const onClickPaginationPrevious = (e: MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault()
-
-      onClickPagination(page - 1)
-    }
-
-    const onClickPaginationNext = (e: MouseEvent<HTMLAnchorElement>) => {
-      e.preventDefault()
-
-      onClickPagination(page + 1)
-    }
-
-    return (
-      <Pagination className='d-flex justify-content-center' aria-label="Page navigation example">
-        <PaginationItem disabled={page < 1}>
-          <PaginationLink
-            className='px-3'
-            previous
-            href='#'
-            onClick={onClickPaginationPrevious} />
-        </PaginationItem>
-        <PaginationItem disabled={page >= Math.floor(todos.length / 10)}>
-          <PaginationLink
-            className='px-3'
-            next
-            href='#'
-            onClick={onClickPaginationNext} />
-        </PaginationItem>
-      </Pagination>
-    )
-  }
 
   useEffect(() => {
     onLoadFetchTodos()
@@ -76,7 +43,10 @@ const TodoList = (
         )}
       </ListGroup>
 
-      {renderPagination()}
+      <Pagination
+        page={page}
+        todosLength={todos.length}
+        onClickPagination={onClickPagination} />
     </Fragment>
   )
 }
