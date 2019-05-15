@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Row } from 'reactstrap'
+import { ButtonGroup, Col, Row } from 'reactstrap'
 
 import FilterLink from '../../../containers/FilterLink'
 import { VisibilityFilters } from '../../../reducers/filters'
@@ -7,22 +7,18 @@ import { VisibilityFilters } from '../../../reducers/filters'
 const Footer = () => (
   <Row>
     <Col xs='12'>
-      <div className='d-flex mb-2'>
-        <div className='mr-1'>
+      <div className='mb-3 d-flex justify-content-between'>
+        <ButtonGroup>
           <FilterLink filter={VisibilityFilters.SHOW_ALL}>
             All
           </FilterLink>
-        </div>
-        <div className='mr-1'>
           <FilterLink filter={VisibilityFilters.SHOW_ACTIVE}>
             Active
           </FilterLink>
-        </div>
-        <div>
           <FilterLink filter={VisibilityFilters.SHOW_COMPLETED}>
             Completed
           </FilterLink>
-        </div>
+        </ButtonGroup>
       </div>
     </Col>
   </Row>
