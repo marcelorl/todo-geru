@@ -58,8 +58,8 @@ const TodoList = (
   }
 
   useEffect(() => {
-    if (!todos.length) onLoadFetchTodos()
-  })
+    onLoadFetchTodos()
+  }, [])
 
   if (!todos.length) return <div className='mt-4 mb-5'>No results</div>
 
