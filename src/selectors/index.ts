@@ -2,13 +2,14 @@ import { createSelector } from 'reselect'
 
 import { TodoType } from '../models'
 
-const getVisibilityFilter = (state: any) => state.filters.visibilityFilter
-const getKeywordSearchFilter = (state: any) => state.filters.keywordSearchFilter
-const getTodos = (state: any) => state.todos
+export const getKeywordSearchFilter = (state: any) => state.filters.keywordSearchFilter
+export const getPageFilter = (state: any) => state.filters.pageFilter
+export const getVisibilityFilter = (state: any) => state.filters.visibilityFilter
+export const getTodos = (state: any) => state.todos
 
 export const getVisibleTodos = createSelector(
-  [ getKeywordSearchFilter, getVisibilityFilter, getTodos ],
-  (keywordSearch, visibilityFilter, todos) => {
+  [ getKeywordSearchFilter, getPageFilter, getVisibilityFilter, getTodos ],
+  (keywordSearch, page, visibilityFilter, todos) => {
     let filteredList = []
 
     switch (visibilityFilter) {
@@ -23,6 +24,10 @@ export const getVisibleTodos = createSelector(
         break
     }
 
-    return filteredList.filter((todo: TodoType) => todo.text.search(keywordSearch) > -1)
+    const filteredListByKeywordSearch = filteredList.filter((todo: TodoType) =>
+      new RegExp(keywordSearch, 'gi').test(todo.text)
+    )
+
+    return filteredListByKeywordSearch.slice(page * 10, (page + 1) * 10)
   }
 )

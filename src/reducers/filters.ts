@@ -2,11 +2,13 @@ import { createReducer } from 'deox'
 
 import {
   setKeywordSearchFilter,
+  setPaginationFilter,
   setVisibilityFilter
 } from '../actions'
 
 type FiltersType = {
   keywordSearchFilter: string
+  pageFilter: number
   visibilityFilter: string
 }
 
@@ -18,17 +20,22 @@ export const VisibilityFilters = {
 
 export const INITIAL_STATE: FiltersType = {
   keywordSearchFilter: '',
+  pageFilter: 0,
   visibilityFilter: VisibilityFilters.SHOW_ALL
 }
 
 const reducer = createReducer(INITIAL_STATE, handle => [
-  handle(setVisibilityFilter, (state: any, { payload }: any) => ({
-    ...state,
-    visibilityFilter: payload.filter
-  })),
   handle(setKeywordSearchFilter, (state: any, { payload }: any) => ({
     ...state,
     keywordSearchFilter: payload.filter
+  })),
+  handle(setPaginationFilter, (state: any, { payload }: any) => ({
+    ...state,
+    pageFilter: payload.filter
+  })),
+  handle(setVisibilityFilter, (state: any, { payload }: any) => ({
+    ...state,
+    visibilityFilter: payload.filter
   }))
 ])
 

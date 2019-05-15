@@ -7,7 +7,7 @@ import { VisibilityFilters } from '../../../reducers/filters'
 const Footer = () => (
   <Row>
     <Col xs='12'>
-      <div className='d-flex'>
+      <div className='d-flex mb-2'>
         <div className='mr-1'>
           <FilterLink filter={VisibilityFilters.SHOW_ALL}>
             All
