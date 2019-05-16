@@ -2,6 +2,7 @@
   "name": "todo-geru",
   "version": "0.0.1",
   "private": true,
+  "proxy": "http://localhost:3001",
   "devDependencies": {
     "@types/redux-mock-store": "^1.0.1",
     "react-scripts": "^3.0.0",
@@ -38,7 +39,7 @@
     "typescript": "^3.4.5"
   },
   "scripts": {
-    "dev": "concurrently \"react-scripts start\" \"npm start --prefix server\"",
+    "dev": "concurrently \"react-scripts start\" \"npm run dev --prefix server\"",
     "start": "npm start --prefix server",
     "heroku-postbuild": "npm run build",
     "build": "react-scripts build",
