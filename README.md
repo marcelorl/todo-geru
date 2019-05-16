@@ -41,6 +41,12 @@ When you start the application, it will start the frontend + json-server api
 $ npm start
 ```
 
+## deployment
+
+Whenever I git push to master my changes are deploy to this heroku website 
+[https://todo-geru.herokuapp.com/](https://todo-geru.herokuapp.com/)
+
 ## Work board
 
-[https://github.com/marcelorl/todo-geru/projects/2](https://github.com/marcelorl/todo-geru/projects/2)
+I'm using a kanban board from github to manage the remaining tasks to complete the challenge, have
+look at: [https://github.com/marcelorl/todo-geru/projects/2](https://github.com/marcelorl/todo-geru/projects/2)
