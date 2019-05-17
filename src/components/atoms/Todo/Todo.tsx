@@ -1,6 +1,14 @@
 import React, { MouseEvent, useState } from 'react'
 import { FaEllipsisV } from 'react-icons/fa'
-import { Button, Dropdown, DropdownItem, DropdownMenu, DropdownToggle, ListGroupItem } from 'reactstrap'
+import dayjs from 'dayjs'
+import {
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownToggle,
+  ListGroupItem
+} from 'reactstrap'
 
 import './Todo.css'
 import { TodoType } from '../../../models'
@@ -25,7 +33,7 @@ const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) =
   }
 
   const dueDate = new Date(todo.dueDate)
-  const dueDateFormatted = `${dueDate.getDate()}/${dueDate.getMonth() + 1}/${dueDate.getFullYear()}`
+  const dueDateFormatted = dayjs(dueDate).format('DD/MM/YYYY HH:mm')
 
   return (
     <ListGroupItem

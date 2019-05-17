@@ -15,7 +15,9 @@
   - Pattern to split presentacional components that aren't connected to the store. Please have a
   look in components folder to have a better understanding of its usage.
 - json-server
-  - local api 
+  - local api
+- workbox
+  - Google tool for service worker handling
  
 ## Features
 

@@ -39,7 +39,7 @@
     {
       "id": 5,
       "text": "task5",
-      "dueDate": "2019-05-15T13:36:33.749Z",
+      "dueDate": "2019-05-15T14:05:00.749Z",
       "completed": true,
       "length": 1234,
       "reminder": 123,
@@ -117,8 +117,8 @@
       "id": 14
     },
     {
-      "text": "testing tasks (1)",
-      "dueDate": "2019-01-15T17:00:00.234Z",
+      "text": "testing tasks",
+      "dueDate": "2019-01-18T20:30:00.000Z",
       "length": 120,
       "reminder": 5,
       "completed": false,
