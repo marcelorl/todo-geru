@@ -20,6 +20,7 @@
     "concurrently": "^4.1.0",
     "dayjs": "^1.8.14",
     "deox": "^1.4.0",
+    "firebase": "^6.0.2",
     "formik": "^1.5.4",
     "install": "^0.12.2",
     "npm": "^6.9.0",

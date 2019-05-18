@@ -2,6 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
+import { initializeFirebase } from './push-notification'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './components/pages/App'
@@ -18,3 +19,4 @@ render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register()
+initializeFirebase()
