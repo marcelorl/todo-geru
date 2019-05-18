@@ -24,6 +24,7 @@ const SearchTodo = ({ onClickFilterByKeyword }: PropsType) => {
         <Col xs='12' sm='9' lg='10'>
           <FormGroup>
             <Input
+              aria-label='search-todo'
               name='keyword'
               placeholder='Ex. Tomar banho, Ajudar minha mãe, Terminar o Teste da GERU'
               onChange={onChange}

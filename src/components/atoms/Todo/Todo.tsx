@@ -43,7 +43,7 @@ const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) =
       <div className='d-flex justify-content-between'>
         <Button color='link' className='btn-todo d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text} | {dueDateFormatted}</Button>
         <Dropdown isOpen={dropdownOpen} toggle={onToggleDropdownOpen}>
-          <DropdownToggle>
+          <DropdownToggle aria-label='options'>
             <FaEllipsisV />
           </DropdownToggle>
           <DropdownMenu right>
