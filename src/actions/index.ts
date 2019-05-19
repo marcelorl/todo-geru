@@ -3,7 +3,6 @@ import { Dispatch } from 'redux'
 import { createAction } from 'deox'
 
 import axios from '../services/request'
-import { requestNotificationPermission } from '../services/push-notification'
 import { TodoType } from '../models'
 
 export const addTodo = createAction(
@@ -51,11 +50,6 @@ export const toggleTodo = createAction(
   (resolve: Function) => (id: number) => resolve({ id })
 )
 
-export const registerNotificationId = createAction(
-  'REGISTRATION_NOTIFICATION_ID',
-  (resolve: Function) => (id: string) => resolve({ id })
-)
-
 export const globalError = createAction('GLOBAL_ERROR')
 
 export const addTodoRequest = (todo: Partial<TodoType>) => {
@@ -96,12 +90,3 @@ export const toggleTodoRequest = (todo: TodoType) => {
       .then(() => dispatch(toggleTodo(todo.id)))
       .catch(() => dispatch(globalError()))
 }
-
-export const registerNotificationIdRequest = () =>
-  (dispatch: Dispatch) =>
-    requestNotificationPermission()
-      .then(id =>
-        axios.post(`notificationIds`, { id })
-          .then(() => dispatch(registerNotificationId(id)))
-      )
-      .catch(() => dispatch(globalError()))

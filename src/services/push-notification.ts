@@ -1,6 +1,8 @@
 import * as firebase from 'firebase/app'
 import 'firebase/messaging'
 
+import axios from './request'
+
 export const initializeFirebase = () => {
   firebase.initializeApp({
     apiKey: 'AIzaSyC1oSrI-TBkXzOOtR8MHPD9f1pGn9fQkHs',
@@ -25,22 +27,34 @@ export const initializeFirebase = () => {
   })
 }
 
-export const requestNotificationPermission = async (): Promise<string> => {
+export const requestNotificationPermission = async () => {
   try {
     const messaging = firebase.messaging()
 
     await messaging.requestPermission()
 
-    const token: string | null = await messaging.getToken()
+    let token = await messaging.getToken()
 
-    if (token === null) {
-      return ''
+    if (!token) {
+      token = ''
     }
+
+    if (!localStorage.getItem('notificationIds')) {
+      await axios.post('notificationIds', { id: token })
+    }
+
+    localStorage.setItem('notificationIds', token)
 
     return token
   } catch (error) {
     console.error(error)
-
-    return ''
   }
+}
+
+export const setOnRefreshTokenListener = () => {
+  const messaging = firebase.messaging()
+
+  messaging.onTokenRefresh(async function() {
+    await requestNotificationPermission()
+  })
 }
