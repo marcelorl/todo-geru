@@ -17,28 +17,30 @@ export const initializeFirebase = () => {
   messaging.usePublicVapidKey('BAy9FESuqS-bZ1oftnNt6JHLiER_sXW9tRvBRYBqsNTdF57xlfwyXCvK_g0KVLKfa3pDzy3wsOCVJxLvQCrXw30')
 
   messaging.onMessage(function(payload) {
-    console.log('Message received. ', payload)
-
     navigator.serviceWorker.ready.then(function(registration) {
       const { body, title } = payload.notification
-      console.log('service worker ready. ', payload)
 
       registration.showNotification(title, { body })
     })
   })
 }
 
-export const requestNotificationPermission = async () => {
+export const requestNotificationPermission = async (): Promise<string> => {
   try {
     const messaging = firebase.messaging()
 
     await messaging.requestPermission()
 
-    const token = await messaging.getToken()
-    console.log('token do usuário:', token)
+    const token: string | null = await messaging.getToken()
+
+    if (token === null) {
+      return ''
+    }
 
     return token
   } catch (error) {
     console.error(error)
+
+    return ''
   }
 }

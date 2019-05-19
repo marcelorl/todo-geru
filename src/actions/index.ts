@@ -3,6 +3,7 @@ import { Dispatch } from 'redux'
 import { createAction } from 'deox'
 
 import axios from '../services/request'
+import { requestNotificationPermission } from '../services/push-notification'
 import { TodoType } from '../models'
 
 export const addTodo = createAction(
@@ -50,6 +51,13 @@ export const toggleTodo = createAction(
   (resolve: Function) => (id: number) => resolve({ id })
 )
 
+export const registerNotificationId = createAction(
+  'REGISTRATION_NOTIFICATION_ID',
+  (resolve: Function) => (id: string) => resolve({ id })
+)
+
+export const globalError = createAction('GLOBAL_ERROR')
+
 export const addTodoRequest = (todo: Partial<TodoType>) => {
   todo.completed = false
   todo.createdAt = new Date()
@@ -57,22 +65,26 @@ export const addTodoRequest = (todo: Partial<TodoType>) => {
   return (dispatch: Dispatch) =>
     axios.post('todos', todo)
       .then(({ data }: AxiosResponse<TodoType>) => dispatch(addTodo(data)))
+      .catch(() => dispatch(globalError()))
 }
 
 export const editTodoRequest = (todo: TodoType) =>
   (dispatch: Dispatch) =>
     axios.put(`todos/${todo.id}`, todo)
       .then(({ data }: AxiosResponse<TodoType>) => dispatch(editTodo(data)))
+      .catch(() => dispatch(globalError()))
 
 export const fetchTodosRequest = () =>
   (dispatch: Dispatch) =>
     axios.get('todos')
       .then(({ data }: AxiosResponse<TodoType[]>) => dispatch(fetchTodos(data)))
+      .catch(() => dispatch(globalError()))
 
 export const removeTodoRequest = (id: number) =>
   (dispatch: Dispatch) =>
     axios.delete(`todos/${id}`)
       .then(() => dispatch(removeTodo(id)))
+      .catch(() => dispatch(globalError()))
 
 export const toggleTodoRequest = (todo: TodoType) => {
   const data = {
@@ -82,4 +94,14 @@ export const toggleTodoRequest = (todo: TodoType) => {
   return (dispatch: Dispatch) =>
     axios.patch(`todos/${todo.id}`, data)
       .then(() => dispatch(toggleTodo(todo.id)))
+      .catch(() => dispatch(globalError()))
 }
+
+export const registerNotificationIdRequest = () =>
+  (dispatch: Dispatch) =>
+    requestNotificationPermission()
+      .then(id =>
+        axios.post(`notificationIds`, { id })
+          .then(() => dispatch(registerNotificationId(id)))
+      )
+      .catch(() => dispatch(globalError()))

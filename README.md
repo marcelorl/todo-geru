@@ -3,6 +3,7 @@
 ## tools + patterns
 
 - react
+- typescript
 - react-redux
   - State manager
 - deox
@@ -18,6 +19,8 @@
   - local api
 - workbox
   - Google tool for service worker handling
+- formik
+  - forms handling
  
 ## Features
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import * as serviceWorker from './serviceWorker';
-import { initializeFirebase, requestNotificationPermission } from './push-notification'
+import { initializeFirebase, requestNotificationPermission } from './services/push-notification'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './components/pages/App'
