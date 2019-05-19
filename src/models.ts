@@ -5,5 +5,6 @@ export type TodoType = {
   dueDate: Date
   length: number
   reminder: number
+  reminderSent?: boolean
   createdAt: Date
 }

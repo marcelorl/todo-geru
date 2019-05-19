@@ -53,6 +53,7 @@ export const toggleTodo = createAction(
 export const globalError = createAction('GLOBAL_ERROR')
 
 export const addTodoRequest = (todo: Partial<TodoType>) => {
+  todo.reminderSent = false
   todo.completed = false
   todo.createdAt = new Date()
 
