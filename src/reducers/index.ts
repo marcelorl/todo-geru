@@ -3,14 +3,14 @@ import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { createLogger } from 'redux-logger'
 
-import todos from './todos'
 import filters from './filters'
+import todos from './todos'
 
 const loggerMiddleware = createLogger()
 
 const reducers = combineReducers({
-  todos,
-  filters
+  filters,
+  todos
 })
 
 const middlewares = applyMiddleware(
