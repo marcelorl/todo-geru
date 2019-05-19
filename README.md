@@ -21,6 +21,12 @@
   - Google tool for service worker handling
 - formik
   - forms handling
+- firebase
+  - notification
+- service worker
+  - background notifications
+- heroku scheduler
+  - every 10 minutes all messages are verified and send a push notification if necessary
  
 ## Features
 
@@ -31,6 +37,7 @@
   - paginação
   - descrição
 - Api local usando json-server
+- Notificação
  
 ## installation
 
