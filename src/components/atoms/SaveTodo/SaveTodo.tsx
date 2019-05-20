@@ -45,7 +45,7 @@ const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo, todo }: PropsTy
 
   return (
     <Modal autoFocus centered isOpen={isOpen} toggle={onClickToggleModal}>
-      <ModalHeader toggle={onClickToggleModal}>Adicionar Tarefa</ModalHeader>
+      <ModalHeader toggle={onClickToggleModal}>Salvar Tarefa</ModalHeader>
       <Formik
         initialValues={formInitialState}
         onSubmit={onSubmit}
