@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import {TodoType} from "./models";
+import { TodoType } from '../models'
 
 export const filterByDate = (filteredList: [], daysFilter: string) => {
   switch (daysFilter) {
@@ -16,15 +16,17 @@ export const filterByDate = (filteredList: [], daysFilter: string) => {
       return filteredList.filter((todo: TodoType) => {
         const dueDate = dayjs(todo.dueDate)
         const weekAgo = dayjs().subtract(7, 'day')
+        const diff = dueDate.diff(weekAgo, 'day')
 
-        return dueDate.diff(weekAgo, 'day') > -1
+        return diff < 7 && diff >= 0
       })
     case '30_DAYS_AGO':
       return filteredList.filter((todo: TodoType) => {
         const dueDate = dayjs(todo.dueDate)
         const monthAgo = dayjs().subtract(30, 'day')
+        const diff = dueDate.diff(monthAgo, 'day')
 
-        return dueDate.diff(monthAgo, 'day') > -1
+        return diff < 30 && diff >= 0
       })
     default:
       return filteredList

@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
 
 import { TodoType } from '../models'
-import { filterByDate } from '../helpers'
+import { filterByDate } from '../services/helpers'
 
 export const getDaysFilter = ({ filters }: any) => filters.daysFilter
 export const getKeywordSearchFilter = ({ filters }: any) => filters.keywordSearchFilter

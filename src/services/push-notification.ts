@@ -13,11 +13,13 @@ export const initializeFirebase = () => {
   messaging.usePublicVapidKey('BAy9FESuqS-bZ1oftnNt6JHLiER_sXW9tRvBRYBqsNTdF57xlfwyXCvK_g0KVLKfa3pDzy3wsOCVJxLvQCrXw30')
 
   messaging.onMessage(function(payload) {
-    navigator.serviceWorker.ready.then(function(registration) {
-      const { body, title } = payload.notification
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.ready.then(function (registration) {
+        const { body, title } = payload.notification
 
-      registration.showNotification(title, { body })
-    })
+        registration.showNotification(title, {body})
+      })
+    }
   })
 }
 

@@ -69,7 +69,7 @@ const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo, todo }: PropsTy
                   <Label for='dueDate'>Data e hora que a tarefa acontecerá</Label>
                   <DatePicker
                     className='form-control'
-                    timeIntervals={5}
+                    timeIntervals={10}
                     dateFormat='dd/MM/yyyy HH:mm'
                     id='dueDate'
                     name='dueDate'
