@@ -18,14 +18,13 @@
 - json-server
   - local api
 - workbox
-  - Google tool for service worker handling
+  - service worker handling
+  - Background notifications
+  - Offline usage
 - formik
   - Forms handling
 - firebase
   - Notification
-- workbox service worker
-  - Background notifications
-  - Offline usage
 - heroku scheduler
   - every 10 minutes all messages are verified and send a push notification if necessary
  
