@@ -46,7 +46,8 @@
     "build-sw": "node ./src/sw-build.js",
     "build": "react-scripts build && npm run build-sw",
     "eject": "react-scripts eject",
-    "test": "react-scripts test --env=node"
+    "test": "react-scripts test --env=node",
+    "cron:verify-reminders": "npm run cron:verify-reminders --prefix server"
   },
   "browserslist": [
     ">0.2%",
