@@ -1,4 +1,4 @@
-import React, { MouseEvent } from 'react'
+import React, { memo, MouseEvent } from 'react'
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
 
 type PropsType = {
@@ -40,4 +40,4 @@ const PaginationWrapper = ({ onClickPagination, page, todosLength }: PropsType) 
   )
 }
 
-export default PaginationWrapper
+export default memo(PaginationWrapper)

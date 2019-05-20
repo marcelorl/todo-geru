@@ -1,17 +1,20 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Container } from 'reactstrap'
 
 import Header from '../../molecules/Header'
-import Footer from '../../molecules/Footer'
 import SearchTodo from '../../../containers/SearchTodo'
-import VisibleTodoList from '../../../containers/VisibleTodoList'
+
+const Footer = lazy(() => import('../../molecules/Footer'))
+const VisibleTodoList = lazy(() => import('../../../containers/VisibleTodoList'))
 
 const App = () => (
   <Container>
     <Header />
     <SearchTodo />
-    <VisibleTodoList />
-    <Footer />
+    <Suspense fallback={<div>Carregando lista</div>}>
+      <VisibleTodoList />
+      <Footer />
+    </Suspense>
   </Container>
 )
 

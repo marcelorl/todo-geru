@@ -20,11 +20,12 @@
 - workbox
   - Google tool for service worker handling
 - formik
-  - forms handling
+  - Forms handling
 - firebase
-  - notification
-- service worker
-  - background notifications
+  - Notification
+- workbox service worker
+  - Background notifications
+  - Offline usage
 - heroku scheduler
   - every 10 minutes all messages are verified and send a push notification if necessary
  

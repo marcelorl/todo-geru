@@ -1,4 +1,4 @@
-import React, { MouseEvent, ReactNode } from 'react'
+import React, { memo, MouseEvent, ReactNode } from 'react'
 import { Button } from 'reactstrap'
 
 type PropsType = {
@@ -17,4 +17,4 @@ const Link = ({ active, children, onClickFilter }: PropsType) => (
     </Button>
 )
 
-export default Link
+export default memo(Link)

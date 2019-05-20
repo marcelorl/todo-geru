@@ -1,4 +1,4 @@
-import React, { MouseEvent, useState } from 'react'
+import React, { MouseEvent, memo, useState } from 'react'
 import { FaEllipsisV } from 'react-icons/fa'
 import dayjs from 'dayjs'
 import {
@@ -35,17 +35,26 @@ const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) =
   const dueDate = new Date(todo.dueDate)
   const dueDateFormatted = dayjs(dueDate).format('DD/MM/YYYY HH:mm')
 
+  const DropdownToggleWrapper = memo(() =>
+    <DropdownToggle aria-label='options'>
+      <FaEllipsisV />
+    </DropdownToggle>
+  )
+
+  const TodoDescriptionWrapper = memo(() =>
+    <Button color='link' className='btn-todo d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text} | {dueDateFormatted}</Button>
+  )
+
   return (
     <ListGroupItem
+      key={todo.id}
       action
       active={todo.completed}
     >
       <div className='d-flex justify-content-between'>
-        <Button color='link' className='btn-todo d-flex align-items-center' onClick={onClickToggleVisibility}>{todo.text} | {dueDateFormatted}</Button>
+        <TodoDescriptionWrapper />
         <Dropdown isOpen={dropdownOpen} toggle={onToggleDropdownOpen}>
-          <DropdownToggle aria-label='options'>
-            <FaEllipsisV />
-          </DropdownToggle>
+          <DropdownToggleWrapper />
           <DropdownMenu right>
             <DropdownItem header>Options</DropdownItem>
             <DropdownItem onClick={onClickToggleModal}>Edit</DropdownItem>

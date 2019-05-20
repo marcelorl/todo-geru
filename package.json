@@ -39,7 +39,7 @@
     "workbox-build": "^4.3.1"
   },
   "scripts": {
-    "dev": "concurrently \"react-scripts start\" \"npm run dev --prefix server\"",
+    "dev": "concurrently \"PORT=3002 react-scripts start\" \"npm run dev --prefix server\"",
     "start": "npm start --prefix server",
     "heroku-postbuild": "npm run build",
     "build-sw": "node ./src/sw-build.js",
