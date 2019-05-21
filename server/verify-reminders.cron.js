@@ -11,9 +11,7 @@ const dbData = fs.readFileSync(path.resolve(__dirname, 'db.json'))
 const dbDataParsed = JSON.parse(dbData)
 
 const todos = dbDataParsed.todos.map(todo => {
-  console.log('now', now.format('DD/MM/YYYY HH:mm:ss'))
-  console.log('reminderTime', reminderTime.format('DD/MM/YYYY HH:mm:ss'))
-  if (!todo.reminderSent && !todo.completed) {
+  // if (!todo.reminderSent && !todo.completed) {
     const now = dayjs()
     const reminderTime = dayjs(todo.dueDate).subtract(todo.reminder, 'minute')
     const diff = now.diff(reminderTime, 'minute')
@@ -46,7 +44,7 @@ const todos = dbDataParsed.todos.map(todo => {
           .catch(e => console.error(e.request))
       })
     }
-  }
+  // }
 
   return todo
 })
