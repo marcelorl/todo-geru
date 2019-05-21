@@ -16,12 +16,12 @@ const todos = dbDataParsed.todos.map(todo => {
     const reminderTime = dayjs(todo.dueDate).subtract(todo.reminder, 'minute')
     const diff = now.diff(reminderTime, 'minute')
 
-    if (diff > -1 && todo.reminder >= diff) {
-      console.log('todo', todo)
-      console.log('diff', diff)
-      console.log('now', now.format('DD/MM/YYYY HH:mm:ss'))
-      console.log('reminderTime', reminderTime.format('DD/MM/YYYY HH:mm:ss'))
+    console.log('todo', todo)
+    console.log('diff', diff)
+    console.log('now', now.format('DD/MM/YYYY HH:mm:ss'))
+    console.log('reminderTime', reminderTime.format('DD/MM/YYYY HH:mm:ss'))
 
+    if (diff > -1 && todo.reminder >= diff) {
       todo.reminderSent = true
 
       dbDataParsed.notificationIds.forEach(item => {
