@@ -15,7 +15,7 @@ const todos = dbDataParsed.todos.map(todo => {
     const now = dayjs()
     const reminderTime = dayjs(todo.dueDate).subtract(todo.reminder, 'minute')
     const diff = now.diff(reminderTime, 'minute')
-
+    console.log('now', now.format('DD/MM/YYYY HH:mm:ss'))
     if (diff > -1 && todo.reminder >= diff) {
       console.log('todo', todo)
       console.log('diff', diff)
