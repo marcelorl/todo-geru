@@ -7,8 +7,8 @@ import {
   requestNotificationPermission,
   setOnRefreshTokenListener } from './services/push-notification'
 
-import 'typeface-roboto'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import './main.scss'
+//import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './components/pages/App'
 import store from './reducers'

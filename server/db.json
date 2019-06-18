@@ -128,16 +128,6 @@
       "id": 13
     },
     {
-      "text": "outra task2",
-      "dueDate": "2019-01-15T13:10:00.749Z",
-      "length": 1234,
-      "reminder": 123,
-      "reminderSent": false,
-      "completed": false,
-      "createdAt": "2019-05-15T13:36:48.381Z",
-      "id": 14
-    },
-    {
       "text": "testing tasks",
       "dueDate": "2019-01-18T20:30:00.000Z",
       "length": 120,

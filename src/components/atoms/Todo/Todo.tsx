@@ -10,7 +10,7 @@ import {
   ListGroupItem
 } from 'reactstrap'
 
-import './Todo.css'
+import './Todo.scss'
 import { TodoType } from '../../../models'
 import EditTodo from "../../../containers/EditTodo";
 
