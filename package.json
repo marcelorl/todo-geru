@@ -7,6 +7,8 @@
     "react-scripts": "^3.0.0"
   },
   "dependencies": {
+    "@types/auth0-js": "^9.10.2",
+    "@types/auth0-lock": "^11.4.12",
     "@types/jest": "^24.0.12",
     "@types/node": "^12.0.0",
     "@types/react": "^16.8.17",
@@ -15,6 +17,8 @@
     "@types/react-redux": "^7 .0.8",
     "@types/reactstrap": "^8.0.1",
     "@types/redux-logger": "^3.0.7",
+    "auth0-js": "^9.10.4",
+    "auth0-lock": "^11.16.3",
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "concurrently": "^4.1.0",
