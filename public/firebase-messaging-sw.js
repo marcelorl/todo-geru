@@ -10,7 +10,7 @@ const messaging = firebase.messaging()
 messaging.setBackgroundMessageHandler(function(payload) {
   const { body } = payload.notification
 
-  const notificationTitle = 'TODO GERU'
+  const notificationTitle = 'TODO APP'
 
   return self.registration.showNotification(notificationTitle, body)
 })

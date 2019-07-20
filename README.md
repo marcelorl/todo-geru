@@ -1,4 +1,4 @@
-# Todos GERU
+# Todo App
 
 ## tools + patterns
 

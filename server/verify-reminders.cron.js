@@ -27,7 +27,7 @@ const todos = dbDataParsed.todos.map(todo => {
       dbDataParsed.notificationIds.forEach(item => {
         axios.post('https://fcm.googleapis.com/fcm/send', {
             notification: {
-              title: 'TODO GERU',
+              title: 'TODO App',
               body: todo.text
             },
             to: item.id

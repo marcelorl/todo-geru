@@ -15,7 +15,7 @@ server.use(compression())
 server.use(express.static(path.resolve(__dirname, '../build')))
 
 server.use(middlewares)
-server.use(jwtCheck)
+server.use(jwtCheck())
 server.use(router)
 server.listen(port, () => {
   console.log('JSON Server is running on port ' + port)

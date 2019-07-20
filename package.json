@@ -1,5 +1,5 @@
 {
-  "name": "todo-geru",
+  "name": "todo-app",
   "version": "0.0.1",
   "private": true,
   "proxy": "http://localhost:3001",
