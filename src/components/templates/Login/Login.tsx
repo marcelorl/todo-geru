@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Login = () =>
-  <div>Login</div>
+import Login from 'containers/Login'
 
-export default Login
+const LoginTemplate = () => <Login />
+
+export default LoginTemplate

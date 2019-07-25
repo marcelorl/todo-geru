@@ -9,16 +9,11 @@ export const login = createAction(
   '[AUTH] VERIFY AUTHENTICATION'
 )
 
-export const verifyAuthentication = () =>
-  (dispatch: Dispatch) => {
-    dispatch(login())
-
-    auth0Instance.login()
-  }
-
 export const loginRequest = () =>
   (dispatch: Dispatch) => {
     dispatch(login())
 
     auth0Instance.login()
   }
+
+// export const loginSuccess
