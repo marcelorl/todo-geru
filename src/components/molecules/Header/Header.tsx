@@ -1,8 +1,8 @@
 import React, { Fragment, memo, useState } from 'react'
 import { Button, Navbar, NavbarBrand } from 'reactstrap'
 
-import AddTodo from '../../../containers/AddTodo'
-import User from '../../../containers/User'
+import AddTodo from 'containers/AddTodo'
+import User from 'containers/User'
 
 const Header = () => {
   const [ isModalOpen, setIsModalOpen ] = useState(false)

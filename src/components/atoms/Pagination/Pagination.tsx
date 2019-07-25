@@ -1,13 +1,13 @@
 import React, { memo, MouseEvent } from 'react'
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap'
 
-type PropsType = {
+type PropTypes = {
   onClickPagination(page: number): void
   page: number
   todosLength: number
 }
 
-const PaginationWrapper = ({ onClickPagination, page, todosLength }: PropsType) => {
+const PaginationWrapper = ({ onClickPagination, page, todosLength }: PropTypes) => {
   const onClickPaginationPrevious = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
 

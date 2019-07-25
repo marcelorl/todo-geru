@@ -1,8 +1,8 @@
 import { bindActionCreators, Dispatch } from 'redux'
 import { connect } from 'react-redux'
 
-import { editTodoRequest } from '../actions'
-import SaveTodo from '../components/atoms/SaveTodo'
+import { editTodoRequest } from 'actions'
+import SaveTodo from 'components/atoms/SaveTodo'
 
 const mapStateToProps = (state: any, ownProps: any) => ownProps
 

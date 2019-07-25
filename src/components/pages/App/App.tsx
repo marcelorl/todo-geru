@@ -1,6 +1,17 @@
 import React from 'react'
-import AppTemplate from '../../templates/App'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-const App = () => <AppTemplate />
+import PrivateRoute from 'components/atoms/PrivateRoute'
+import AppTemplate from 'components/templates/App'
+import Login from 'components/templates/Login'
 
-export default App
+const Routes = () => {
+  return (
+    <Router>
+      <Route path="/login" component={Login} />
+      <PrivateRoute path="/" exact component={AppTemplate} />
+    </Router>
+  )
+}
+
+export default Routes

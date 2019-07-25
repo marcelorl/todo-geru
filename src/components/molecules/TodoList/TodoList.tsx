@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect } from 'react'
 import { ListGroup } from 'reactstrap'
 
-import Todo from '../../atoms/Todo'
-import Pagination from '../../atoms/Pagination'
-import { TodoType } from '../../../models'
+import Todo from 'components/atoms/Todo'
+import Pagination from 'components/atoms/Pagination'
+import { TodoType } from 'models'
 
-type PropsType = {
+type PropTypes = {
   page: number
   todos: TodoType[]
   onClickPagination(page: number): void
@@ -22,7 +22,7 @@ const TodoList = (
     onLoadFetchTodos,
     page,
     todos
-  }: PropsType) => {
+  }: PropTypes) => {
 
   useEffect(() => {
     onLoadFetchTodos()

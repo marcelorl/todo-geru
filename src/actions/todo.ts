@@ -6,51 +6,51 @@ import axios from '../services/request'
 import { TodoType } from '../models'
 
 export const addTodo = createAction(
-  'ADD_TODO',
+  '[TODO] ADD',
   (resolve: Function) => (todo: Partial<TodoType>) => resolve(todo)
 )
 
 export const editTodo = createAction(
-  'EDIT_TODO',
+  '[TODO] EDIT',
   (resolve: Function) => (todo: Partial<TodoType>) => resolve(todo)
 )
 
 export const removeTodo = createAction(
-  'REMOVE_TODO',
+  '[TODO] REMOVE',
   (resolve: Function) => (id: number) => resolve({ id })
 )
 
 export const fetchTodos = createAction(
-  'FETCH_TODO',
+  '[TODO] FETCH',
   (resolve: Function) => (todos: TodoType[]) => resolve(todos)
 )
 
 export const setVisibilityFilter = createAction(
-  'SET_VISIBILITY_FILTER',
+  '[TODO] SET_VISIBILITY_FILTER',
   (resolve: Function) => (filter: string) => resolve({ filter })
 )
 
 export const setKeywordSearchFilter = createAction(
-  'SET_KEYWORD_SEARCH_FILTER',
+  '[TODO] SET_KEYWORD_SEARCH_FILTER',
   (resolve: Function) => (filter: string) => resolve({ filter })
 )
 
 export const setPaginationFilter = createAction(
-  'SET_PAGINATION_FILTER',
+  '[TODO] SET_PAGINATION_FILTER',
   (resolve: Function) => (filter: number) => resolve({ filter })
 )
 
 export const setDaysFilter = createAction(
-  'SET_DAYS_FILTER',
+  '[TODO] SET_DAYS_FILTER',
   (resolve: Function) => (filter: string) => resolve({ filter })
 )
 
 export const toggleTodo = createAction(
-  'TOGGLE_TODO',
+  '[TODO] TOGGLE',
   (resolve: Function) => (id: number) => resolve({ id })
 )
 
-export const globalError = createAction('GLOBAL_ERROR')
+export const globalError = createAction('[GLOBAL] ERROR')
 
 export const addTodoRequest = (todo: Partial<TodoType>) => {
   todo.reminderSent = false

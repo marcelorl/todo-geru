@@ -15,16 +15,16 @@ import {
 
 import 'react-datepicker/dist/react-datepicker.min.css'
 
-import { TodoType } from '../../../models'
+import { TodoType } from 'models'
 
-type PropsType = {
+type PropTypes = {
   isOpen: boolean
   onClickToggleModal(): void
   onSubmitAddTodo(todo: any): void
   todo?: TodoType
 }
 
-const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo, todo }: PropsType) => {
+const SaveTodo = ({ isOpen, onClickToggleModal, onSubmitAddTodo, todo }: PropTypes) => {
   let formInitialState = {
     text: '',
     dueDate: new Date(),

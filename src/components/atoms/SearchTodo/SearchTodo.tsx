@@ -1,11 +1,11 @@
 import React, { ChangeEvent, FormEvent, memo, useState } from 'react'
 import { Button, Col, Form, FormGroup, Input, Row } from 'reactstrap'
 
-type PropsType = {
+type PropTypes = {
   onClickFilterByKeyword(keywordSearch: string): void
 }
 
-const SearchTodo = ({ onClickFilterByKeyword }: PropsType) => {
+const SearchTodo = ({ onClickFilterByKeyword }: PropTypes) => {
   const [ keywordSearch, setKeywordSearch ] = useState('')
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {

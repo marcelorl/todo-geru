@@ -5,7 +5,7 @@ import {
   setKeywordSearchFilter,
   setPaginationFilter,
   setVisibilityFilter
-} from '../actions'
+} from 'actions'
 
 type FiltersType = {
   daysFilter: string

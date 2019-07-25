@@ -6,7 +6,6 @@
   "scripts": {
     "prestart": "npm i",
     "start": "node server",
-    "dev": "json-server --port 3001 --watch db.json",
     "precron:verify-reminders": "npm i",
     "cron:verify-reminders": "node verify-reminders.cron.js"
   },

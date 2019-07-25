@@ -6,8 +6,8 @@ import {
   fetchTodos,
   removeTodo,
   toggleTodo
-} from '../actions'
-import { TodoType } from '../models'
+} from 'actions'
+import { TodoType } from 'models'
 
 export const INITIAL_STATE: Partial<TodoType>[] = []
 

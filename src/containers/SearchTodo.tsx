@@ -1,8 +1,8 @@
 import { connect } from 'react-redux'
 import { bindActionCreators, Dispatch } from 'redux'
 
-import { setKeywordSearchFilter } from '../actions'
-import SearchTodo from '../components/atoms/SearchTodo'
+import { setKeywordSearchFilter } from 'actions'
+import SearchTodo from 'components/atoms/SearchTodo'
 
 const mapStateToProps = () => ({})
 

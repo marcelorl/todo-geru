@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { TodoType } from '../models'
+import { TodoType } from 'models'
 
 export const filterByDate = (filteredList: [], daysFilter: string) => {
   switch (daysFilter) {

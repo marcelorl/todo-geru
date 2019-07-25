@@ -11,16 +11,16 @@ import {
 } from 'reactstrap'
 
 import './Todo.scss'
-import { TodoType } from '../../../models'
-import EditTodo from "../../../containers/EditTodo";
+import { TodoType } from 'models'
+import EditTodo from "containers/EditTodo";
 
-type PropsType = {
+type PropTypes = {
   todo: TodoType
   onClickToggleVisibility(e: MouseEvent<HTMLElement>): void
   onClickRemoveTodo(e: MouseEvent<HTMLElement>): void
 }
 
-const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropsType) => {
+const Todo = ({ onClickToggleVisibility, onClickRemoveTodo, todo }: PropTypes) => {
   const [ dropdownOpen, setDropdownOpen ] = useState(false)
   const [ isModalOpen, setIsModalOpen ] = useState(false)
 

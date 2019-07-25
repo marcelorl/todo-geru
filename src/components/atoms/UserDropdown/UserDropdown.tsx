@@ -1,7 +1,7 @@
 import React from 'react'
 // import { Button, Col, Form, FormGroup, Input, Row } from 'reactstrap'
 
-// type PropsType = {
+// type PropTypes = {
 //   onClickFilterByKeyword(keywordSearch: string): void
 // }
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import { ButtonGroup, Col, Row } from 'reactstrap'
 
-import FilterLink from '../../../containers/FilterLink'
-import FilterLinkByDays from '../../../containers/FilterLinkByDays'
-import { DaysFilters, VisibilityFilters } from '../../../reducers/filters'
+import FilterLink from 'containers/FilterLink'
+import FilterLinkByDays from 'containers/FilterLinkByDays'
+import { DaysFilters, VisibilityFilters } from 'reducers/filters'
 
 const Footer = () => (
   <Row>
