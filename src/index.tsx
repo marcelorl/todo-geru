@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import * as serviceWorker from './serviceWorker';
+
+import * as serviceWorker from './serviceWorker'
 import {
   initializeFirebase,
   requestNotificationPermission,
@@ -9,12 +10,12 @@ import {
 
 import './main.scss'
 
-import App from './components/pages/App'
-import store from './reducers'
+import Routes from './routes'
+import store from 'reducers'
 
 render(
   <Provider store={store}>
-    <App />
+    <Routes />
   </Provider>,
   document.getElementById('root')
 )
