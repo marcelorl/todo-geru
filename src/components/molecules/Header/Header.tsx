@@ -12,7 +12,7 @@ const Header = () => {
   }
 
   const NavbarWrapper = memo(() =>
-    <Navbar color="light" light className='mt-2 mb-4'>
+    <Navbar color="light" light className='mb-4'>
       <NavbarBrand href="/">
         <h1>Todo</h1>
       </NavbarBrand>

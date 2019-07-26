@@ -1,4 +1,7 @@
 import Auth0Lock from 'auth0-lock'
+import { createBrowserHistory } from 'history'
+
+const history = createBrowserHistory()
 
 export default () => {
   const lock = new Auth0Lock('APAI8CkBipmwrB03OPz2H4XDzdN9kRFl', 'deliverer.auth0.com',
@@ -11,21 +14,22 @@ export default () => {
       },
       container: 'login',
       auth: {
-        responseType: 'code token id_token',
-        params: {
-          scope: 'openid email'
-        }
+        responseType: 'code token id_token'
       }
   })
 
-  lock.on('authenticated', function(authResult: any) {
-    lock.getUserInfo(authResult.accessToken, function(error: any, profile: any) {
+  lock.on('authenticated', function(authResult) {
+    lock.getUserInfo(authResult.accessToken, function(error, profile) {
       if (error) {
         return
       }
-console.log(authResult, profile)
-      localStorage.setItem('accessToken', authResult.accessToken)
-      localStorage.setItem('profile', JSON.stringify(profile))
+
+      console.log(authResult, profile)
+
+      localStorage.setItem('auth0.token', authResult.idToken)
+      localStorage.setItem('auth0.profile', JSON.stringify(profile))
+
+      history.push('')
     })
   })
 
