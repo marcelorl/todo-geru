@@ -1,4 +1,4 @@
-# Todos GERU
+# Todo GERU
 
 ## tools + patterns
 
@@ -42,20 +42,26 @@
 ## installation
 
 ```
-$ npm install
+$ yarn
 ```
 
-## usage
+## development
+
+```
+$ yarn dev
+```
+
+## prod
 
 When you start the application, it will start the frontend + json-server api
 
 ```
-$ npm start
+$ yarn start
 ```
 
 ## deployment
 
-Whenever I git push to master my changes are deploy to this heroku website 
+Whenever I git push to master my changes are deployed to the heroku's repository website 
 [https://todo-geru.herokuapp.com/](https://todo-geru.herokuapp.com/)
 
 ## Work board

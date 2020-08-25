@@ -1,7 +1,7 @@
 // @ts-ignore
 if ('function' === typeof importScripts) {
   importScripts(
-    'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js'
+    'https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-sw.js'
   )
   /* global workbox */
   if (workbox) {
