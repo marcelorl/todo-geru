@@ -16,7 +16,7 @@
     "react-scripts": "^3.4.3"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "dayjs": "^1.8.34",
     "deox": "^3.2.1",
